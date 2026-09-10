@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>CYBER STRIKE // Arcade Space Shooter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="game-container">
+    <!-- Top HUD Bar -->
+    <header id="hud">
+      <div class="hud-group">
+        <span class="hud-label">SCORE</span>
+        <span id="score-val" class="hud-value">0</span>
+      </div>
+      <div class="hud-group">
+        <span class="hud-label">HIGH SCORE</span>
+        <span id="high-score-val" class="hud-value">0</span>
+      </div>
+      <div class="hud-group">
+        <span class="hud-label">LEVEL</span>
+        <span id="level-val" class="hud-value">1</span>
+      </div>
+      <div class="hud-group health-group">
+        <span class="hud-label">SHIELD HP</span>
+        <div class="health-bar-container">
+          <div id="health-fill"></div>
+        </div>
+      </div>
+      <button id="btn-pause" class="icon-btn" title="Pause Game">⏸</button>
+    </header>
+
+    <!-- Canvas Game Screen -->
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <!-- Dynamic Power-Up Status Badges -->
+    <div id="powerup-status"></div>
+
+    <!-- START OVERLAY -->
+    <div id="start-overlay" class="overlay active">
+      <div class="overlay-card">
+        <h1 class="glow-title">CYBER STRIKE</h1>
+        <p class="subtitle">RETRO ARCADE SPACE SHOOTER</p>
+        
+        <div class="instructions">
+          <div class="inst-row">
+            <span class="key">A</span> / <span class="key">D</span> or <span class="key">←</span> <span class="key">→</span>
+            <span>Move Spaceship</span>
+          </div>
+          <div class="inst-row">
+            <span class="key">SPACE</span>
+            <span>Fire Plasma Lasers</span>
+          </div>
+          <div class="inst-row">
+            <span class="key">P</span>
+            <span>Pause / Resume Game</span>
+          </div>
+        </div>
+
+        <button id="btn-start" class="btn primary-btn">LAUNCH MISSION</button>
+      </div>
+    </div>
+
+    <!-- PAUSE OVERLAY -->
+    <div id="pause-overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h2>GAME PAUSED</h2>
+        <p>Take a breath, Commander.</p>
+        <div class="btn-group">
+          <button id="btn-resume" class="btn primary-btn">RESUME</button>
+          <button id="btn-restart-pause" class="btn secondary-btn">RESTART</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME OVER OVERLAY -->
+    <div id="gameover-overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h1 class="danger-title">MISSION FAILED</h1>
+        <div class="final-stats">
+          <div class="stat-box">
+            <span>FINAL SCORE</span>
+            <strong id="final-score">0</strong>
+          </div>
+          <div class="stat-box">
+            <span>BEST RECORD</span>
+            <strong id="final-highscore">0</strong>
+          </div>
+        </div>
+        <button id="btn-restart" class="btn primary-btn">PLAY AGAIN</button>
+      </div>
+    </div>
+
+    <!-- MOBILE TOUCH CONTROLS -->
+    <div id="mobile-controls">
+      <div class="touch-cluster">
+        <button id="btn-left" class="touch-btn">◀</button>
+        <button id="btn-right" class="touch-btn">▶</button>
+      </div>
+      <button id="btn-fire" class="touch-btn fire-btn">FIRE</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
